@@ -1,0 +1,9 @@
+{
+    "env": "dev",
+    "port": 8080,
+    "ip": "85.143.164.227",
+    "mongo": { "uri": "mongodb://bekhterev:bekhterev@127.0.0.1:27017/bekhterev_d" },
+    "analysis_path": "/home/localadmin/project_d/analysis-files",
+    "auth": true,
+    "cors": []
+}

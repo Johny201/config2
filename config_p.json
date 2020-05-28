@@ -1,0 +1,48 @@
+{
+    "env": "prod",
+    "https": {
+        "cert": {
+            "privkey": "/cert/privkey.pem",
+            "cert": "/cert/cert.pem",
+            "chain": "/cert/chain.pem"
+        },
+        "isHttps": true,
+        "host": "math.bekhterev.ru",
+        "port": 443
+    },
+    "port": 80,
+    "ip": "0.0.0.0",
+    "mongo": {
+        "uri": "mongodb://bekhterev:bekhterev@mongo/bekhterev?authSource=admin"
+    },
+    "analysis_path": "/opt/server/analysis-files",
+    "auth": false,
+    "cors": [
+        "http://math.bekhterev.ru",
+        "https://math.bekhterev.ru"
+    ],
+    "oidc": {
+        "href": "https://math.bekhterev.ru/oidc",
+        "clients": [
+            {
+                "client_id": "bekhterev-client-prod",
+                "client_secret": "prod-bekhterev",
+                "redirect_uris": [
+                    "https://math.bekhterev.ru"
+                ],
+                "response_types": [
+                    "token id_token",
+                    "id_token"
+                ],
+                "post_logout_redirect_uris": [
+                    "https://math.bekhterev.ru"
+                ],
+                "grant_types": [
+                    "implicit"
+                ],
+                "filterProtocolClaims": true,
+                "loadUserInfo": true
+            }
+        ]
+    }
+}

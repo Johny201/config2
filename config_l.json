@@ -1,0 +1,21 @@
+{
+    "env": "local",
+    "https": {
+        "cert": "./server.pfx",
+        "isHttps": false,
+        "passphrase": "password"
+    },
+    "port": 8080,
+    "ip": "127.0.0.1",
+    "mongo": {
+        "uri": "mongodb://bekhterev:bekhterev@ds012168.mlab.com:12168/bekhterev"
+    },
+    "analysis_path": "./analysis-files",
+    "auth": true,
+    "cors": [
+        "http://localhost:4201",
+        "http://localhost:8080",
+        "https://gk.gk:4201",
+        "https://gk.gk:8080"
+    ]
+}

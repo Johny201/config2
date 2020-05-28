@@ -1,0 +1,72 @@
+{
+    "env": "local-https",
+    "https": {
+        "cert": {
+            "pfx": "./server.pfx",
+            "passphrase": "password"
+        },
+        "isHttps": true,
+        "host": "gk.gk",
+        "port": 8080
+    },
+    "port": 8081,
+    "ip": "gk.gk",
+    "mongo": {
+        "uri": "mongodb://bekhterev:bekhterev@ds012168.mlab.com:12168/bekhterev"
+    },
+    "analysis_path": "./analysis-files",
+    "auth": true,
+    "cors": [
+        "http://localhost:4201",
+        "http://localhost:8080",
+        "https://gk.gk:4201",
+        "https://gk.gk:8080"
+    ],
+    "oidc": {
+        "href": "https://gk.gk:8080/oidc",
+        "clients": [
+            {
+                "client_id": "bekhterev-client",
+                "client_secret": "bekhterevClient",
+                "redirect_uris": [
+                    "http://math.bekhterev.ru/cb"
+                ]
+            },
+            {
+                "client_id": "bekhterev-client-local",
+                "client_secret": "local-bekhterev",
+                "redirect_uris": [
+                    "https://gk.gk:8080"
+                ],
+                "response_types": [
+                    "token id_token",
+                    "id_token"
+                ],
+                "post_logout_redirect_uris": [
+                    "https://gk.gk:8080"
+                ],
+                "grant_types": [
+                    "implicit"
+                ],
+                "filterProtocolClaims": true,
+                "loadUserInfo": true
+            },
+            {
+                "client_id": "bekhterev-local",
+                "client_secret": "local-bekhterev",
+                "redirect_uris": [
+                    "https://gk.gk:8080"
+                ],
+                "response_types": [
+                    "token id_token"
+                ],
+                "post_logout_redirect_uris": [
+                    "https://gk.gk:8080"
+                ],
+                "grant_types": [
+                    "implicit"
+                ]
+            }
+        ]
+    }
+}
